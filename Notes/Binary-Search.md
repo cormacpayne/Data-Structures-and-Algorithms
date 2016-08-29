@@ -83,13 +83,12 @@ int hi = N-1;
 
 while (lo <= hi) {
   mid = lo + (hi -lo) / 2;
-  if (array[mid] == targetValue) {
-    break;
-  } else if (array[mid] < targetValue) {
-    lo = mid;
-  } else (array[mid] > targetValue) {
-    hi = mid;
-  }
+  
+  if (array[mid] == targetValue) break;
+  
+  if (array[mid] < targetValue) lo = mid;
+  
+  if (array[mid] > targetValue) hi = mid;
 }
 ```
 
