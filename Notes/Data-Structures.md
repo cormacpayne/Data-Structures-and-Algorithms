@@ -196,6 +196,7 @@ TreeMap<Integer, String> map = new TreeMap<Integer, String>();
 map.put(17, "red");
 map.put(28, "blue");
 map.put(14, "green");
+
 for (Integer key : map.keySet()) {
   System.out.print(key);  // output is '14, 17, 28'
 }
