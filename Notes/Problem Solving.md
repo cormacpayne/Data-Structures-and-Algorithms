@@ -20,6 +20,7 @@ Being able to identify edge cases and worst case scenarios for a problem are als
 ## How do we break a problem down?
 
 If we are given a problem to work on, what are the steps we must take in order to get an accepted solution? Here are the basic steps to follow:
+
 1. Read the problem
 2. Manually solve the problem
 3. Take note of the constraints
