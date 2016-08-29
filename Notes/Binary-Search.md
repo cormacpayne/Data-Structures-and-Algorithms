@@ -57,17 +57,17 @@ Let's call the index of the middle number in this target section `mid`, which ca
 
 There are three possible scenarios:
 
-1) `array[mid] == targetValue`
+1: `array[mid] == targetValue`
 
 If the middle number of our current sequence is equal to the target value, we have found what we are looking for and are done
 
-2) `array[mid] < targetValue`
+2: `array[mid] < targetValue`
 
 If the middle number of our sequence is less than the target value, then we know that the bottom half of the current sequence can be eliminated.
 
 We can adjust the sequence by setting `lo = mid`
 
-3) `array[mid] > targetValue`
+3: `array[mid] > targetValue`
 
 If the middle number of our sequence is greater than the target value, then we know that the top half of the current sequence can be eliminated.
 
