@@ -33,7 +33,8 @@ Each element in the list is called a *node*, and contains two pieces of informat
 An example class for the **nodes** would look like the following:
 
 ```java
-class Node {
+class Node
+{
   String data;
   Node nextNode;
 }
@@ -46,7 +47,8 @@ The following code shows how to create a basic linked list (no data)
 ```java
 Node start = new Node();
 
-for (int i = 1; i <= 10; i++) {
+for (int i = 1; i <= 10; i++)
+{
   start.nextNode = new Node();
   start = start.nextNode;
 }
@@ -57,7 +59,8 @@ The following code shows how to iterate over a linked list
 ```java
 Node start = ...
 
-while (start != null) {
+while (start != null)
+{
   // do something with data from the node
   start = start.nextNode;
 }
@@ -104,7 +107,8 @@ set.add(4); // {7, 3, 4}
 The following is how you can iterate over each element in a set:
 
 ```java
-for (Integer i : set) {
+for (Integer i : set)
+{
   // do something with the element
 }
 ```
@@ -197,7 +201,8 @@ map.put(17, "red");
 map.put(28, "blue");
 map.put(14, "green");
 
-for (Integer key : map.keySet()) {
+for (Integer key : map.keySet())
+{
   System.out.print(key);  // output is '14, 17, 28'
 }
 ```
