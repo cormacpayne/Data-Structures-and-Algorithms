@@ -284,6 +284,26 @@ Now that the table is filled out, we can solve our original problem, where _i_ =
 
 So our answer is: `dp[ 5 ][ 6 ]` = 60
 
+```java
+for ( int i = 1; i <= N; i++ )
+{
+    for ( int j = 0; j <= W; j++)
+    {
+        if ( weight[ i ] >= j )
+        {
+            if ( value[ i ] + dp[ i - 1 ][ j - weight[ i ] ] > dp[ i - 1 ][ j ] )
+            {
+                dp[ i ][ j ] = value[ i ] + dp[ i - 1 ][ j - weight[ i ] ];
+            }
+            else
+            {
+                dp[ i ][ j ] = dp[ i - 1 ][ j ];
+            }
+        }
+    }
+}
+```
+
 ### Top-Down Solution
 
 To solve the problem using the top-down approach, we will try to come up with some recursive function that will give us the answer.
