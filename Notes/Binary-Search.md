@@ -81,14 +81,18 @@ We want to keep searching while we have some range of numbers to check, so if `l
 int lo = 0;
 int hi = N-1;
 
-while (lo <= hi) {
+while (lo <= hi)
+{
   mid = lo + (hi -lo) / 2;
   
-  if (array[mid] == targetValue) break;
+  if (array[mid] == targetValue)
+      break;
   
-  if (array[mid] < targetValue) lo = mid;
+  if (array[mid] < targetValue)
+      lo = mid + 1;
   
-  if (array[mid] > targetValue) hi = mid;
+  if (array[mid] > targetValue)
+      hi = mid - 1;
 }
 ```
 
