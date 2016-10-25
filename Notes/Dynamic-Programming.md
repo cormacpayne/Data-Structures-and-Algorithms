@@ -135,3 +135,266 @@ public int pascal( int n, int k )
 ```
 
 ## Knapsack Problem
+
+### Problem Statement
+
+You have a knapsack that can hold up to a certain weight _W_, and you have _N_ items that you can pack for a trip; however, all of these items might not fit in your knapsack.
+
+Each item you can pack has a weight _w_ and a value _v_.
+
+Your goal is to pack some items into your knapsack such that the total weight of all of the items doesn't exceed the maximum weight limit _W_, and the sum of all the values of the items in your knapsack is _maximized_.
+
+### Approaches
+
+1. Calculate all subsets of items and see which subset has the highest value, but also stays under the knapsack's weight limit
+2. Create some ratio for each item _v_ / _w_ and take the items with the highest ratio until you can't pack anymore
+3. Use dynamic programming
+
+### Solving Knapsack: Take I - Subset Solution
+
+Let's calculate all subsets of the _N_ items that we have.
+
+This means that there are 2<sup>_N_</sup> possible subsets that we will need to go through.
+
+However, if _N_ is sufficiently large (larger than 25), this approach will be too slow
+
+### Solving Knapsack: Take II - Ratio Solution
+
+Imagine we have a knapsack with _W_ = 6 and are given the following set of items:  
+_w_ = {2, 2, 2, 5}  
+_v_ = {7, 7, 7, 20}
+
+Let's find the _v_ / _w_ ratio of each item  
+_v_ / _W_ = {3.5, 3.5, 3.5, 4}
+
+Now that we have the ratios, let's take the items with the greatest ratio until we have no more space left in the knapsack.
+
+We will take the item with _w_ = 5, _v_ = 20 first and put it into oiur knapsack.
+
+We now have 1 weight left in our knapsack, so we cannot fit any of the other items in our knapsack, so we end up with a value of 20.
+
+However, if we would've taken the other three items, we would've had no weight left and a value of 21 instead.
+
+### Solving Knapsack: Take III - Dynamic Programming
+
+There are two approaches to dynamic programming:
+- _Top-down_: define the overall problem first and what subproblems you will need to solve in order to get your answer
+- _Bottom-up_: start by solving subproblems and build up to the subproblems
+
+We will look at how to solve the knapsack problem using both approaches
+
+#### Bottom-Up Solution
+
+Using the bottom-up approach, we need to first solve all of the possible subproblems, and then we can use those to solve our overall problem.
+
+We will create a table that will hold the solutions to these subproblems, and keep building on it until we are done and have our answer.
+
+Let's say we have a knapsack with capacity _W_ = 6 and the following weights and values for _N_ = 5 items:
+_w_ = {3, 2, 1, 4, 5}  
+_v_ = {25, 20, 15, 40, 50}
+
+Let's figure out for all capacities, _j_, less than _W_ = 6, what is the maximum value we can get if we only use the first _i_ items
+
+`dp[ i ][ j ]` will be the solution for each subproblem
+
+Let's create our table; each cell will represent `dp[ i ][ j ]`
+
+|   |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|
+|   | 0 |   |   |   |   |   |   |   |
+| w = 3, v = 25 | 1 |   |   |   |   |   |   |   |
+| w = 2, v = 20 | 2 |   |   |   |   |   |   |   |
+| w = 1, v = 15 | 3 |   |   |   |   |   |   |   |
+| w = 4, v = 40 | 4 |   |   |   |   |   |   |   |
+| w = 5, v = 50 | 5 |   |   |   |   |   |   |   |
+
+If we can't use any of the items (_i_ = 0), the value at any capacity will be 0
+
+|   |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|
+|   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| w = 3, v = 25 | 1 |   |   |   |   |   |   |   |
+| w = 2, v = 20 | 2 |   |   |   |   |   |   |   |
+| w = 1, v = 15 | 3 |   |   |   |   |   |   |   |
+| w = 4, v = 40 | 4 |   |   |   |   |   |   |   |
+| w = 5, v = 50 | 5 |   |   |   |   |   |   |   |
+
+For _i_ = 1, we can only take the first item in our set, so we want to take it whenever we have the capacity for it
+
+|   |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|
+|   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| w = 3, v = 25 | 1 | 0 | 0 | 0 | 25 | 25 | 25 | 25 |
+| w = 2, v = 20 | 2 |   |   |   |   |   |   |   |
+| w = 1, v = 15 | 3 |   |   |   |   |   |   |   |
+| w = 4, v = 40 | 4 |   |   |   |   |   |   |   |
+| w = 5, v = 50 | 5 |   |   |   |   |   |   |   |
+
+For _i_ = 2, we can now take the second item in our set in addition to the first item, but only when taking the item at a given capacity will give us greater value than not taking it.
+
+For example, at capacity _j_ = 2, previously when we didn't have the item, we could get at most 0 value, but if we now take the item, we can get at most 20 value.
+
+At capacity _j_ = 3, previously when we didn't have the item, we could get at most 25 value, but if we now take the item, we can get 20 value AND the maximum value we could get previously at capacity _j_ = 1, which is 0 (since we are looking at a capacity of _j_ = 3, and we took the second item, the capacity we have left is _j_ = 1, so we look at the maximum value we could get at this weight with all of the previous items). In this case, we do not want to take the item, because doing so will give us a lower value (20 < 25).
+
+At capacity _j_ = 5, previously when we didn't have the item, we could get at most 25 value, but if we now take the item, we can get 20 value AND the maximum value we could get previously at capacity _j_ = 3, which is 25 (since we are looking at a capacity of _j_ = 5, and we took the second item, the capacity we have left is _j_ = 3, so we look at the maximum value we could get at this weight with all of the previous items). In this case, we do want to take the item, because doing so will give us more value (45 > 25).
+
+|   |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|
+|   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| w = 3, v = 25 | 1 | 0 | 0 | 0 | 25 | 25 | 25 | 25 |
+| w = 2, v = 20 | 2 | 0 | 0 | 20 | 25 | 25 | 25 | 25 |
+| w = 1, v = 15 | 3 |   |   |   |   |   |   |   |
+| w = 4, v = 40 | 4 |   |   |   |   |   |   |   |
+| w = 5, v = 50 | 5 |   |   |   |   |   |   |   |
+
+For _i_ = 3, we repeat the same process that we did for _i_ = 2.
+
+|   |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|
+|   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| w = 3, v = 25 | 1 | 0 | 0 | 0 | 25 | 25 | 25 | 25 |
+| w = 2, v = 20 | 2 | 0 | 0 | 20 | 25 | 25 | 25 | 25 |
+| w = 1, v = 15 | 3 | 0 | 15 | 20 | 35 | 40 | 45 | 60 |
+| w = 4, v = 40 | 4 |   |   |   |   |   |   |   |
+| w = 5, v = 50 | 5 |   |   |   |   |   |   |   |
+
+For _i_ = 4, we repeat the same process as before
+
+|   |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|
+|   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| w = 3, v = 25 | 1 | 0 | 0 | 0 | 25 | 25 | 25 | 25 |
+| w = 2, v = 20 | 2 | 0 | 0 | 20 | 25 | 25 | 25 | 25 |
+| w = 1, v = 15 | 3 | 0 | 15 | 20 | 35 | 40 | 45 | 60 |
+| w = 4, v = 40 | 4 | 0 | 15 | 20 | 35 | 40 | 55 | 60 |
+| w = 5, v = 50 | 5 |   |   |   |   |   |   |   |
+
+For _i_ = 5, we repeat the same process as before
+
+|   |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|
+|   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| w = 3, v = 25 | 1 | 0 | 0 | 0 | 25 | 25 | 25 | 25 |
+| w = 2, v = 20 | 2 | 0 | 0 | 20 | 25 | 25 | 25 | 25 |
+| w = 1, v = 15 | 3 | 0 | 15 | 20 | 35 | 40 | 45 | 60 |
+| w = 4, v = 40 | 4 | 0 | 15 | 20 | 35 | 40 | 55 | 60 |
+| w = 5, v = 50 | 5 | 0 | 15 | 20 | 35 | 40 | 55 | 60 |
+
+Now that the table is filled out, we can solve our original problem, where _i_ = 5 and _j_ = 6, by looking up the answer from the table
+
+So our answer is: `dp[ 5 ][ 6 ]` = 60
+
+### Top-Down Solution
+
+To solve the problem using the top-down approach, we will try to come up with some recursive function that will give us the answer.
+
+As we did with the bottom-up approach, we will go item by item and see if we want to take it or not.
+
+We will also keep track of how much weight we have left in the knapsack as we go through the items (this will help us determine if we can take an item or not).
+
+_Note_: when we're looking at an item, we only have two options: _take_ or _ignore_
+
+This is why this problem is called the "_0/1 Knapsack Problem_"
+
+```java
+public int solve( int i, int j )
+{
+    // Determines the max value you can get when starting at the ith item with j remaining weight left to use
+}
+```
+
+Let's try and figure out some base cases for this function.
+
+What happens if _j_ == 0?
+- the max value we get by starting at _any_ index with _no weight left_ will be zero
+
+What happens if _i_ == _N_?
+- the max value we get by starting at an index _outside of our item range_ will be zero
+
+Let's look at every other case where _i_ != _N_ and _j_ > 0
+
+What happens if the weight of the _i_<sup>_th_</sup> item is greater than the remaining weight, _j_?
+
+If the weight of the item we are currently looking at is _greater_ than the amount of weight we have left, there's no way that we can take this item, so we _ignore_ it
+
+```java
+solve( i + 1, j )
+```
+
+The maximum value we get by starting at an index _where we can't take the item_ will be determined by the maximum value we get by starting at the _next_ item with the _same_ remaining weight to use.
+
+What happens if the weight of the _i_<sup>_th_</sup> item is less than or equal to the remaining weight, _j_?
+
+_Remember_, we only have two options: _take_ or _ignore_
+
+We know what ignoring an item looks like:
+
+```java
+solve( i + 1, j )
+```
+
+But what does _taking_ an item look like?
+
+Well, we know that the value of the remaining weight will be different
+- we took an item, so we need to subtract out it's weight from the remaining weight
+
+We also know that since we _took_ the item, we can add its value to our result
+
+Our resulting function call for _taking_ an item would be
+
+```java
+value[ i ] + solve( i + 1, j - weight[ i ] )
+```
+
+The maximum value we get by starting at an index _where we take the item_ can be determined by the sum of
+- the value of the item, and
+- the maximum value we get by starting at the _next_ item with the new remaining weight
+
+However, we just saw two separate function calls where we have enough weight to take an item, so which one do we use?
+
+```java
+int ignore = solve( i + 1, j );
+int take = value[ i ] + solve( i + 1, j - weight[ i ] );
+Math.max( ignore, take );
+```
+
+We now know our solution handles every case for the Knapsack problem, giving us the optimal solution when we call `solve( 0, W )`, and it shows the problem has an _optimal substructure_ - that is, an optimal solution can be constructed from the optimal solutions of its subproblems.
+
+If we solve any subproblem `solve( i, j )`, we are _guaranteed_ to get the optimal answer, and we can use these optimal subproblems to solve _other_ subproblems.
+
+We know that the problem has optimal substructure, but does it have any _overlapping subproblems_?
+
+Let's look at an example:  
+_v_ = {100, 70, 50, 10}  
+_w_ = {10, 4, 6, 12}  
+_W_ = 12
+
+Imagine that we take the first item and ignore the next two
+- we will be at `solve( i = 3, j = 2 )`
+
+Imagine that we ignore the first item and take the next two
+- we will be at `solve( i = 3, j = 2 )`
+
+We have now determined we have _overlapping subproblems_, so we can save the value of a specific _index_ / _remaining weight_ pair, so we don't have to recompute the solution to the subproblem each time
+
+```java
+int[][] dp = new int[ N ][ W ];
+public int solve( int i, int j )
+{
+    // If there's no more space or we run out of items, we can't get anymore value
+    if ( j == 0 || n == N )
+        return 0;
+    // If we have already solved this subproblem, return the value
+    if ( dp[ i ][ j ] != 0 )
+        return dp[ i ][ j ];
+        
+    // If the weight of the current item is greater than the weight we have left in the knapsack, ignore it
+    if ( weight[ i ] > j )
+        return solve( i + 1, j );
+        
+    // For every other case, determine if ignoring or taking the current item will yield more value
+    int ignore = solve( i + 1, j );
+    int take = value[ i ] + solve( i + 1, j - weight[ i ] );
+    return dp[ i ][ j ] = Math.max( ignore, take );
+}
+```
