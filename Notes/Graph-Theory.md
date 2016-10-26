@@ -94,20 +94,20 @@ _Cons_
 
 Rather than making space for all _N_ x _N_ possible edge connections, an _adjacency list_ keeps track of the vertices that a vertex has an edge to.
 
-We are able to do this by creating an `ArrayList` that contains `ArrayLists` holding the values of the vertices that a vertex is connected to.
+We are able to do this by creating an array that contains `ArrayLists` holding the values of the vertices that a vertex is connected to.
 
 ```java
-ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
+ArrayList<Integer>[] graph = new ArrayList<Integer>[ N + 1 ];
 
 // For each vertex, we need to initialize the list of vertices the vertex has a connection to
 for ( int i = 0; i <= N; i++ )
 {
-    graph.add( new ArrayList<Integer>() );
+    graph[ i ] = new ArrayList<Integer>();
 }
 
-graph.get( i ).add( j ); // get the list of vertices for vertex i and add a connection to vertex j
+graph[ i ].add( j ); // get the list of vertices for vertex i and add a connection to vertex j
 
-ArrayList<Integer> neighbors = graph.get( k ); // get the list of vertices that vertex k is connected to
+ArrayList<Integer> neighbors = graph[ k ]; // get the list of vertices that vertex k is connected to
 ```
 
 #### Pros and  Cons
@@ -168,7 +168,7 @@ In order to do this, we will be using a _Queue_ since it follows the "_first in,
      // Get the current vertex
      Integer current = queue.remove();     
      // Get the current vertex's neighbors
-     List<Integer> neighbors = graph.get( current );
+     ArrayList<Integer> neighbors = graph[ current ];
      
      // For each of the current vertex's neighbors...
      foreach ( Integer neighbor : neighbors )
@@ -225,7 +225,7 @@ Since a _Stack_ follows the "_last in, first out_" ordering, when we are adding 
      // Get the current vertex
      Integer current = stack.pop();     
      // Get the current vertex's neighbors
-     List<Integer> neighbors = graph.get( current );
+     ArrayList<Integer> neighbors = graph[ current ];
      
      // For each of the current vertex's neighbors...
      foreach ( Integer neighbor : neighbors )
