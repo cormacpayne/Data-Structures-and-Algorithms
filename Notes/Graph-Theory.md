@@ -150,7 +150,7 @@ In order to do this, we will be using a _Queue_ since it follows the "_first in,
  1. Push the root vertex onto the queue
  2. Pop the queue to get the current vertex
  3. For each unvisited neighbor of the current vertex, mark them as visited and push them onto the queue
- 4. Go back to step 2 until the queue is empty
+ 4. Go back to step 2 until the queue is empty  
  
  ```java
  // Initialize the queue
