@@ -147,9 +147,9 @@ We need to use some data structure that will allow us to visit vertices "_level-
 In order to do this, we will be using a _Queue_ since it follows the "_first in, first out_" ordering; this means if we put all the vertices at level _j_ into the queue before the vertices at level _j_+1, we are guaranteed to visit the lower level vertices first.
 
  Below are the steps to follow for BFS:
- 1. Push the root vertex onto the queue
- 2. Pop the queue to get the current vertex
- 3. For each unvisited neighbor of the current vertex, mark them as visited and push them onto the queue
+ 1. Push the root vertex onto the queue  
+ 2. Pop the queue to get the current vertex  
+ 3. For each unvisited neighbor of the current vertex, mark them as visited and push them onto the queue  
  4. Go back to step 2 until the queue is empty  
  
  ```java
