@@ -109,7 +109,8 @@ while ( !visited[ destination ] )
         }
     }
     
-    // If we were unable to find another vertex to visit...
+
+// If we were unable to find another vertex to visit...
     if ( index == -1 )
     {
         // Break out of the loop
@@ -156,6 +157,78 @@ class Vertex implements Comparable<Vertex>
         else
         {
             return 1;
+        }
+    }
+}
+```
+
+Remember that when we used `dist[]` to keep track of distances, we had to look through _all_ tentative distances to see which vertex to visit; with this method, we just remove the next vertex from the priority queue and it will be guaranteed to have the smallest distance.
+
+Now that we have our `Vertex` class setup, how do we use it to implement Dijkstra's algorithm?
+
+Let's start by creating all of the vertices of a graph and storing them into an array.
+
+```java
+Vertex[] graph = new Vertex[ N ];
+
+// For each vertex in the graph...
+for ( int i = 0; i < N; i++ )
+{
+    // Initialize the Vertex object corresponding to the vertex
+    graph[ i ] = new Vertex( i );
+}
+
+graph[ i ].neighbors.add( j ); // Add vertex j as a neighbor of vertex i
+```
+
+We know the tentative distance of our source vertex is zero, so we can assign that value and add the vertex to the priority queue.
+
+```java
+vertex[ source ].dist = 0;
+priorityQueue.add( vertex[ source ] );
+```
+
+Just like BFS, we are repeating the steps of the algorithm until the queue is empty. This makes sense for Dijkstra's algorithm since we want to keep repeating the process until we either
+- run out of vertices (queue is empty), or
+- reach our destination vertex
+
+Now that we have our stopping condition, we can implement the rest of the algorithm
+
+```java
+// While the queue still has vertices left to visit...
+while ( !priorityQueue.isEmpty() )
+{
+    // Get the current vertex
+    Vertex current = priorityQueue.remove();
+    
+    // If the current vertex is our destination...
+    if ( current.id == destination )
+    {
+        // Break from the loop
+        break;    
+    }
+    
+    // Get the neighbors of the current vertex
+    ArrayList<Integer> neighbors = current.neighbors;
+    
+    // For each of the neighbors...
+    for ( Integer j : neighbor )
+    {
+        // Get the Vertex representation of the neighbor
+        Vertex neighbor = graph[ j ];
+        
+        // Calculate the new distance to the neighbor
+        int newDistance = current.dist + cost[ current.id ][ neighbor.id ];
+        
+        // If the new distance we calculated is smaller than the tentative distance of the neighbor...
+        if ( newDistance < neighbor.dist )
+        {
+            // Remove the neighbor from the priority queue so we can update the value
+            priorityQueue.remove( neighbor );
+            // Update the tentative distance of the neighbor
+            neighbor.dist = newDistance;
+            // Add the neighbor into the priority queue so that it can be sorted among the other vertices
+            priorityQueue.add( neighbor );
         }
     }
 }
