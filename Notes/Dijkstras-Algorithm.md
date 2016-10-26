@@ -120,3 +120,43 @@ while ( !visited[ destination ] )
     current = index;
 }
 ```
+
+#### Using a priority queue
+
+Remember that as you add items to a priority queue, they are automatically sorted within the queue, so that you are given the "smallest" item when you remove it from the queue.
+
+First, we need to define our `Vertex` class and what attributes it will contain.
+
+```java
+// In order for the Vertex class to be sortable, we need to implement the Comparable interface
+class Vertex implements Comparable<Vertex>
+{
+    // id   - the integer representing the vertex
+    // dist - the tenetative distance to the vertex
+    int id, dist;
+    
+    // neighbors - the integer value of the neighboring vertices
+    ArrayList<Integer> neighbors;
+    
+    public Vertex( int id )
+    {
+        this.id = id;
+        this.dist = Integer.MAX_VALUE;
+        this.neighbors = new ArrayList<Integer>();
+    }
+    
+    // This method needs to be overridden to determine how vertices are sorted
+    public int compareTo( Vertex v )
+    {
+        // The vertex that has a smaller tentative distance should be removed from the queue first
+        if ( this.dist < v.dist )
+        {
+            return -1;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+}
+```
