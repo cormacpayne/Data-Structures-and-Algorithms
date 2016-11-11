@@ -12,7 +12,7 @@ Given a graph _G_ and a starting vertex _s_, what is the _shortest path_ from _s
 
 This problem is called the _Single-Source Shortest Paths_ (SSSP) problem.
 
-## Single=Source Shortest Path
+## Single-Source Shortest Path
 
 #### SSSP on an unweighted graph
 
