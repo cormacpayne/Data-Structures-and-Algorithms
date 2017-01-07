@@ -137,3 +137,13 @@ public double solve( int bitmask, int pos )
     return dp[ bitmask ][ pos ] = minDistance;
 }
 ```
+
+## Problems
+
+- [Collecting Beepers](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1437)
+- [Forming Quiz Teams](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1852)
+- [Square](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1305)
+- [Pebble Solitaire](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1592)
+- [Happy Valentine Day](http://www.spoj.com/problems/A_W_S_N/)
+- [Cleaning Robot](http://www.spoj.com/problems/CLEANRBT/)
+- [You Win!](http://www.spoj.com/problems/YOUWIN/)
