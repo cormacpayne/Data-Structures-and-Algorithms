@@ -98,6 +98,10 @@ while (lo <= hi)
 
 ## Problems
 
-- [Aggressive cows](spoj.com/problems/AGGRCOW)
-- [ABCDEF](spoj.com/problems/ABCDEF)
+- [Hacking the random number generator](http://www.spoj.com/problems/HACKRNDM/)
+- [Pizzamania](http://www.spoj.com/problems/OPCPIZZA/)
+- [Aggressive cows](http://www.spoj.com/problems/AGGRCOW)
+- [ABCDEF](http://www.spoj.com/problems/ABCDEF)
+- [Subset Sums](http://www.spoj.com/problems/SUBSUMS/)
 - [Cutting Cheese](icpc.kattis.com/problems/cheese)
+- [Mountain Walking](http://www.spoj.com/problems/MTWALK/)
