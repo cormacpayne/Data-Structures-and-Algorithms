@@ -206,3 +206,11 @@ for (Integer key : map.keySet())
   System.out.print(key);  // output is '14, 17, 28'
 }
 ```
+
+## Problems
+
+- [Seinfeld](http://www.spoj.com/problems/ANARC09A/)
+- [Friends of Friends](http://www.spoj.com/problems/FACEFRND/)
+- [Homo or Hetero](http://www.spoj.com/problems/HOMO/)
+- [Street Parade](http://www.spoj.com/problems/STPAR/)
+- [Lowest Common Ancestor](http://www.spoj.com/problems/LCA/)
