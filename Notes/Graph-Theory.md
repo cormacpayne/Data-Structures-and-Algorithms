@@ -253,3 +253,17 @@ The graphs above that we used for BFS and DFS were both trees.
 ![img](https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Tree_graph.svg/180px-Tree_graph.svg.png)
 
 Above is another example of a tree.
+
+## Problems
+
+- [Is it a tree](http://www.spoj.com/problems/PT07Y/)
+- [Bitmap](http://www.spoj.com/problems/BITMAP/)
+- [VALIDATE THE MAZE](http://www.spoj.com/problems/MAKEMAZE/)
+- [Meeting For Party](http://www.spoj.com/problems/DCEPC706/)
+- [Slick](http://www.spoj.com/problems/UCV2013H/)
+- [Escape from Jail Again](http://www.spoj.com/problems/ESCJAILA/)
+- [A Bug's Life](http://www.spoj.com/problems/BUGLIFE/)
+- [Longest path in a tree](http://www.spoj.com/problems/PT07Z/)
+- [Treeramids](http://www.spoj.com/problems/PYRA/)
+- [Lucius Dungeon](http://www.spoj.com/problems/BYTESE1/)
+- [Mountain Walking](http://www.spoj.com/problems/MTWALK/)
