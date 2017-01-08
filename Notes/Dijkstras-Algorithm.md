@@ -233,3 +233,17 @@ while ( !priorityQueue.isEmpty() )
     }
 }
 ```
+
+## Problems
+
+- [106 miles to Chicago](http://www.spoj.com/problems/CHICAGO/)
+- [Highways](http://www.spoj.com/problems/HIGHWAYS/)
+- [Mice and Maze](http://www.spoj.com/problems/MICEMAZE/)
+- [ABC Path](http://www.spoj.com/problems/ABCPATH/)
+- [COSTLY CHESS](http://www.spoj.com/problems/CCHESS/)
+- [Shopping](http://www.spoj.com/problems/SHOP/)
+- [Prime Path](http://www.spoj.com/problems/PPATH/)
+- [The Benefactor](http://www.spoj.com/problems/BENEFACT/)
+- [Fishmonger](http://www.spoj.com/problems/FISHER/)
+- [Fool the Police](http://www.spoj.com/problems/FPOLICE/)
+- [Electric Car Rally](http://www.spoj.com/problems/CARRALLY/)
