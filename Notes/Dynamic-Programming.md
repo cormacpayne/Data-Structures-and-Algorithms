@@ -418,3 +418,21 @@ public int solve( int i, int j )
     return dp[ i ][ j ] = Math.max( ignore, take );
 }
 ```
+
+## Problems
+
+- [The Knapsack Problem](http://www.spoj.com/problems/KNAPSACK/)
+- [Party Schedule](http://www.spoj.com/problems/PARTY/)
+- [Tri graphs](http://www.spoj.com/problems/ACPC10D/)
+- [Bytelandian gold coins](http://www.spoj.com/problems/COINS/)
+- [Coins Game](http://www.spoj.com/problems/MCOINS/)
+- [Feline Olympics - Mouseball](http://www.spoj.com/problems/MBALL/)
+- [Piggy-Bank](http://www.spoj.com/problems/PIGBANK/)
+- [Mixtures](http://www.spoj.com/problems/MIXTURES/)
+- [TV game](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=851)
+- [Fire! Fire!! Fire!!!](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1184)
+- [Sweet and Sour Rock](http://www.spoj.com/problems/ROCK/)
+- [Rent your airplane and make money](http://www.spoj.com/problems/RENT/)
+- [Scuba diver](http://www.spoj.com/problems/SCUBADIV/)
+- [ACM (ACronymMaker)](http://www.spoj.com/problems/ACMAKER/)
+- [Two Ends](http://www.spoj.com/problems/TWENDS/)
