@@ -83,3 +83,24 @@ If you followed all of the previous steps, you can go ahead and submit your solu
 
 If you happen to get **Wrong Answer**, **Time Limit Exceeded**, or **Runtime Error**, make sure that you read the problem correctly, handled all cases, have a fast enough algorithm, and that your program isn't crashing when being tested.
 
+## Problems - Easy
+
+- [Life, the Universe, and Everything](http://www.spoj.com/problems/TEST/)
+- [To and Fro](http://www.spoj.com/problems/TOANDFRO/)
+- [Adding Reversed Numbers](http://www.spoj.com/problems/ADDREV/)
+- [Traversing Grid](http://www.spoj.com/problems/TRGRID/)
+- [Anti-Blot System](http://www.spoj.com/problems/ABSYS/)
+- [What's Next](http://www.spoj.com/problems/ACPC10A/)
+- [Alpha Centauri Tennis](http://www.spoj.com/problems/ACT/)
+- [Rectangles](http://www.spoj.com/problems/AE00/)
+- [Christmas Play](http://www.spoj.com/problems/AMR10G/)
+- [Complete the Series (Easy)](http://www.spoj.com/problems/AP2/)
+- [Simple Arithmetics II](http://www.spoj.com/problems/ARITH2/)
+- [Common Permutation](http://www.spoj.com/problems/CPRMT/)
+- [A Very Easy Problem!](http://www.spoj.com/problems/EASYPROB/)
+- [Pizza](http://www.spoj.com/problems/EGYPIZZA/)
+- [Traveling Salesman](http://www.spoj.com/problems/FAKETSP/)
+- [Happy Numbers I](http://www.spoj.com/problems/HPYNOS/)
+- [Java vs C++](http://www.spoj.com/problems/JAVAC/)
+- [Not a Triangle](http://www.spoj.com/problems/NOTATRI/)
+- [Ambiguous Permutations](http://www.spoj.com/problems/PERMUT2/)
