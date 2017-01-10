@@ -289,7 +289,7 @@ for ( int i = 1; i <= N; i++ )
 {
     for ( int j = 0; j <= W; j++)
     {
-        if ( weight[ i ] >= j )
+        if ( weight[ i ] <= j )
         {
             if ( value[ i ] + dp[ i - 1 ][ j - weight[ i ] ] > dp[ i - 1 ][ j ] )
             {
@@ -299,6 +299,10 @@ for ( int i = 1; i <= N; i++ )
             {
                 dp[ i ][ j ] = dp[ i - 1 ][ j ];
             }
+        }
+        else
+        {
+            dp[ i ][ j ] = dp[ i - 1][ j ];
         }
     }
 }
