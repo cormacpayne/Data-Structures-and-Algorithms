@@ -104,3 +104,15 @@ If you happen to get **Wrong Answer**, **Time Limit Exceeded**, or **Runtime Err
 - [Java vs C++](http://www.spoj.com/problems/JAVAC/)
 - [Not a Triangle](http://www.spoj.com/problems/NOTATRI/)
 - [Ambiguous Permutations](http://www.spoj.com/problems/PERMUT2/)
+
+## Problems - Medium
+
+- [Colours A, B, C, D](http://www.spoj.com/problems/ABCD/)
+- [Aliens at the train](http://www.spoj.com/problems/ALIEN/)
+- [Bye Bye Cakes](http://www.spoj.com/problems/BYECAKES/)
+- [The Great Ball](http://www.spoj.com/problems/BYTESE2/)
+- [Headshot](http://www.spoj.com/problems/HEADSHOT/)
+- [Hotels Along the Croatian Coast](http://www.spoj.com/problems/HOTELS/)
+- [Just Next !!!](http://www.spoj.com/problems/JNEXT/)
+- [The Next Palindrome](http://www.spoj.com/problems/PALIN/)
+- [Rat Attack](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1301)
