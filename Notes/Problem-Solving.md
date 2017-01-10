@@ -116,3 +116,14 @@ If you happen to get **Wrong Answer**, **Time Limit Exceeded**, or **Runtime Err
 - [Just Next !!!](http://www.spoj.com/problems/JNEXT/)
 - [The Next Palindrome](http://www.spoj.com/problems/PALIN/)
 - [Rat Attack](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1301)
+- [Do it Wrong, Get it Right](http://www.spoj.com/problems/DWRONG/)
+
+## Problems - Hard
+
+- [Hexagram](http://www.spoj.com/problems/HEXGRAM/)
+- [Mickey Mouse Magic Trick v3](http://www.spoj.com/problems/MMMAGIC3/)
+- [Beautiful Mountains](http://www.spoj.com/problems/MOUNTAIN/)
+- [Nested Palindromes](http://www.spoj.com/problems/NESPALIN/)
+- [Shuffles](http://www.spoj.com/problems/SHUFFLES/)
+- [Walls](http://www.spoj.com/problems/WALLSPRO/)
+- [Unhappy Numbers](http://www.spoj.com/problems/UNHAPPY/)
