@@ -26,10 +26,10 @@ Below are books that I recommend reading if you are interested in learning more 
 
 ## Completed Notes
 
-### Introductory
+### Getting Started
 
 - [Introduction to Problem Solving](./Notes/Problem-Solving.md)
-- [Data Structures](./Notes/Data-Structures.md)
+- [Basic Data Structures](./Notes/Data-Structures.md)
 - [Bits and Subsets](./Notes/Bits-and-Subsets.md)
 - [Binary Search](./Notes/Binary-Search.md)
 
