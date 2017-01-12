@@ -26,7 +26,7 @@ Below are books that I recommend reading if you are interested in learning more 
 
 ## Completed Notes
 
-### Basics
+### Introductory
 
 - [Introduction to Problem Solving](./Notes/Problem-Solving.md)
 - [Data Structures](./Notes/Data-Structures.md)
