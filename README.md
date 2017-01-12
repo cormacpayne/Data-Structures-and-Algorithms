@@ -1,8 +1,8 @@
-# UF Programming Team
+# Competitive Programming
 
 ## Introduction
 
-This repository contains notes that have been converted from slideshows I created in college for the UF Programming Team. I plan on adding notes for the more advanced topics I did not get to while at college. If you have any questions, requests, or find an error in the provided notes, please feel free to either open an issue or contact me at cormacpayne@ufl.edu
+This repository contains notes that have been converted from slideshows I created in college for the University of Florida Programming Team. I plan on adding notes for the more advanced topics I did not get to while at college. If you have any questions, requests, or find an error in the provided notes, please feel free to either open an issue or contact me at cormacpayne@ufl.edu
 
 ## Completed Notes
 
