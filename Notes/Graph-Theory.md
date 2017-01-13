@@ -31,7 +31,7 @@ A _weighted graph_ contains edges that hold a numerical value (_e.g._, cost, tim
 
 ### Weighted, undirected graph
 
-![img](https://cdn.filestackcontent.com/NFPJSZO5SyoWO3VBMSdN)
+![img](https://upload.wikimedia.org/wikipedia/commons/3/30/Weighted_K4.svg)
 
 ### Complete graph
 
