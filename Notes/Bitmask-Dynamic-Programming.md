@@ -10,7 +10,7 @@ A bitmask is nothing more than a number that defines which bits are _on_ and _of
 
 The traveling salesman problem is a classic algorithmic problem defined as follows: given a list of _N_ cities, as well as the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns back to the city that you started from? (_Note_: we can start from any city as long as we return to it)
 
-![img](http://mathworld.wolfram.com/images/eps-gif/TravelingSalesmanProblem_1000.gif)
+![img](https://upload.wikimedia.org/wikipedia/commons/1/11/GLPK_solution_of_a_travelling_salesman_problem.svg)
 
 ### Take I - Permutations
 
