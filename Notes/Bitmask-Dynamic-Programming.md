@@ -71,6 +71,9 @@ public double solve( int bitmask, int pos )
 }
 ```
 
+State of DP:
+dp[ bitmask ][ pos ] = The Best cost to travel the un-masked cities , if the last visited city was 'pos'.
+
 If we know that `solve( bitmask, pos )` will give us thge answer to the traveling salesman problem, and we say that we start at city 0, what should our initial function call be?
 
 What is the value of `bitmask`?
