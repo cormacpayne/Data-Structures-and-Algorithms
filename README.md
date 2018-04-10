@@ -28,20 +28,22 @@ Below are books that I recommend reading if you are interested in learning more 
 
 ### Getting Started
 
-- [Introduction to Problem Solving](./Notes/Problem-Solving.md)
-- [Basic Data Structures](./Notes/Data-Structures.md)
-- [Bits and Subsets](./Notes/Bits-and-Subsets.md)
-- [Binary Search](./Notes/Binary-Search.md)
+- [Introduction to Problem Solving](./problem-solving)
+- [Basic Data Structures](./data-structures/introduction)
+- [Bits and Subsets](./bits-and-subsets.md)
+- [Binary Search](./binary-search.md)
 
 ### Graph Theory
 
-- [Introduction to Graph Theory](./Notes/Graph-Theory.md)
-- [Dijkstra's Algorithm](./Notes/Dijkstras-Algorithm.md)
+- [Introduction to Graph Theory](./graph-theory/introduction)
+- [Breadth-First Search](./graph-theory/traversal/breadth-first-search)
+- [Depth-First Search](./graph-theory/traversal/depth-first-search)
+- [Dijkstra's Algorithm](./graph-theory/shortest-path/dijkstras-algorithm)
 
 ### Dynamic Programming
 
-- [Introduction to Dynamic Programming](./Notes/Dynamic-Programming.md)
-- [Bitmask Dynamic Programming](./Notes/Bitmask-Dynamic-Programming.md)
+- [Introduction to Dynamic Programming](./dynamic-programming/introduction)
+- [Bitmask Dynamic Programming](./dynamic-programming/bitmask-dynamic-programming)
 
 ## Wish List
 
