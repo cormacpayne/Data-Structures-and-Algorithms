@@ -53,11 +53,11 @@ There are many ways to use an adjacency matrix to represent a matrix, but we wil
 
 #### Connection matrix
 
-![graph-theory-introduction-1](..\..\resources\graph-theory-introduction-1.png)
+![graph-theory-introduction-1](../../resources/graph-theory-introduction-1.png)
 
 #### Cost matrix
 
-![graph-theory-introduction-2](..\..\resources\graph-theory-introduction-2.png)
+![graph-theory-introduction-2](../../resources/graph-theory-introduction-2.png)
 
 #### Pros and Cons
 
@@ -75,7 +75,7 @@ Rather than making space for all _N_ x _N_ possible edge connections, an _adjace
 
 We are able to do this by creating an array that contains `ArrayLists` holding the values of the vertices that a vertex is connected to.
 
-![graph-theory-introduction-3](..\..\resources\graph-theory-introduction-3.png)
+![graph-theory-introduction-3](../../resources/graph-theory-introduction-3.png)
 
 #### Pros and  Cons
 

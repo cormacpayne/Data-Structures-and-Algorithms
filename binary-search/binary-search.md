@@ -77,7 +77,7 @@ Now that we have the three possible scenarios handled, we just need to define wh
 
 We want to keep searching while we have some range of numbers to check, so if `lo` ever becomes greater than `hi`, then our target value is not in the array due to the fact that we have run out of numbers to check.
 
-![binary-search](..\resources\binary-search.png)
+![binary-search](../resources/binary-search.png)
 
 ## Problems
 

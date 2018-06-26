@@ -53,7 +53,7 @@ There are several ways to implement this algorithm
 
 #### Using an array
 
-![graph-theory-dijkstras-algorithm-1](..\..\..\resources\graph-theory-dijkstras-algorithm-1.png)
+![graph-theory-dijkstras-algorithm-1](../../../resources/graph-theory-dijkstras-algorithm-1.png)
 
 #### Using a priority queue
 
@@ -61,7 +61,7 @@ Remember that as you add items to a priority queue, they are automatically sorte
 
 First, we need to define our `Vertex` class and what attributes it will contain.
 
-![graph-theory-dijkstras-algorithm-2](..\..\..\resources\graph-theory-dijkstras-algorithm-2.png)
+![graph-theory-dijkstras-algorithm-2](../../../resources/graph-theory-dijkstras-algorithm-2.png)
 
 Remember that when we used `dist[]` to keep track of distances, we had to look through _all_ tentative distances to see which vertex to visit; with this method, we just remove the next vertex from the priority queue and it will be guaranteed to have the smallest distance.
 
@@ -95,7 +95,7 @@ Just like BFS, we are repeating the steps of the algorithm until the queue is em
 
 Now that we have our stopping condition, we can implement the rest of the algorithm
 
-![graph-theory-dijkstras-algorithm-3](..\..\..\resources\graph-theory-dijkstras-algorithm-3.png)
+![graph-theory-dijkstras-algorithm-3](../../../resources/graph-theory-dijkstras-algorithm-3.png)
 
 ## Problems
 
