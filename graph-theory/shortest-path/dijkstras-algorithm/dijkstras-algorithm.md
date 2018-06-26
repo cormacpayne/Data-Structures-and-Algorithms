@@ -53,74 +53,7 @@ There are several ways to implement this algorithm
 
 #### Using an array
 
-```java
-// This array will keep track of the tentative distance up to each vertex
-int[] distance = new int[ N ];
-// This array will tell us if we have visited a vertex or not
-boolean[] visited = new boolean[ N ];
-
-// Mark the tentative distance of the starting vertex as zero
-distance[ start ] = 0;
-// Set the current vertex as the starting vertex
-int current = start;
-
-// While we have not reached our destination...
-while ( !visited[ destination ] )
-{
-    // Mark the current vertex as visited
-    visited[ current ] = true;
-    // Get the neighboring vertices of the current vertex
-    ArrayList<Integer> neighbors = graph[ current ];
-    
-    // For each of the neighbors of the current vertex...
-    for ( int neighbor : neighbors )
-    {
-        // Calculate the new distance to the neighbor
-        // This can be calculated by taking the tentative distance up to the current vertex and adding the
-        // cost to go from the current vertex to the neighbor
-        int newDistance = distances[ current ] + costs[ current ][ neighbor ];
-        
-        // If this new distance we calculated is smaller than the current tentative distance of the neighbor...
-        if ( newDistance < distances[ neighbor ] )
-        {
-            // Update the tentative distance of the neighbor with this new distance
-            distances[ neighbor ] = newDistance;
-        }
-    }
-    
-    // We now need to calculate the new current vertex, which will be the vertex with the smallest tentative
-    // distance that we have yet to visit in the graph
-    
-    // This will keep track of the next vertex that we will set as the current vertex
-    int index = -1;
-    // This will keep track of the minimum tentative distance of the next current vertex
-    int min = Integer.MAX_VALUE;
-    
-    // For each of the vertices in the graph...
-    for ( int j = 0; j < N; j++ )
-    {
-        // If we have not visited the vertex and the tentative distance of the vertex is smaller than our current min...
-        if ( !visited[ j ] && distances[ j ] < min )
-        {
-            // Update the index with the vertex
-            index = j;
-            // Update the min distance value
-            min = distances[ j ];
-        }
-    }
-    
-
-// If we were unable to find another vertex to visit...
-    if ( index == -1 )
-    {
-        // Break out of the loop
-        break;
-    }
-    
-    // Update the current vertex
-    current = index;
-}
-```
+![graph-theory-dijkstras-algorithm-1](..\..\..\resources\graph-theory-dijkstras-algorithm-1.png)
 
 #### Using a priority queue
 
@@ -128,39 +61,7 @@ Remember that as you add items to a priority queue, they are automatically sorte
 
 First, we need to define our `Vertex` class and what attributes it will contain.
 
-```java
-// In order for the Vertex class to be sortable, we need to implement the Comparable interface
-class Vertex implements Comparable<Vertex>
-{
-    // id   - the integer representing the vertex
-    // dist - the tenetative distance to the vertex
-    int id, dist;
-    
-    // neighbors - the integer value of the neighboring vertices
-    ArrayList<Integer> neighbors;
-    
-    public Vertex( int id )
-    {
-        this.id = id;
-        this.dist = Integer.MAX_VALUE;
-        this.neighbors = new ArrayList<Integer>();
-    }
-    
-    // This method needs to be overridden to determine how vertices are sorted
-    public int compareTo( Vertex v )
-    {
-        // The vertex that has a smaller tentative distance should be removed from the queue first
-        if ( this.dist < v.dist )
-        {
-            return -1;
-        }
-        else
-        {
-            return 1;
-        }
-    }
-}
-```
+![graph-theory-dijkstras-algorithm-2](..\..\..\resources\graph-theory-dijkstras-algorithm-2.png)
 
 Remember that when we used `dist[]` to keep track of distances, we had to look through _all_ tentative distances to see which vertex to visit; with this method, we just remove the next vertex from the priority queue and it will be guaranteed to have the smallest distance.
 
@@ -194,45 +95,7 @@ Just like BFS, we are repeating the steps of the algorithm until the queue is em
 
 Now that we have our stopping condition, we can implement the rest of the algorithm
 
-```java
-// While the queue still has vertices left to visit...
-while ( !priorityQueue.isEmpty() )
-{
-    // Get the current vertex
-    Vertex current = priorityQueue.remove();
-    
-    // If the current vertex is our destination...
-    if ( current.id == destination )
-    {
-        // Break from the loop
-        break;    
-    }
-    
-    // Get the neighbors of the current vertex
-    ArrayList<Integer> neighbors = current.neighbors;
-    
-    // For each of the neighbors...
-    for ( Integer j : neighbor )
-    {
-        // Get the Vertex representation of the neighbor
-        Vertex neighbor = graph[ j ];
-        
-        // Calculate the new distance to the neighbor
-        int newDistance = current.dist + cost[ current.id ][ neighbor.id ];
-        
-        // If the new distance we calculated is smaller than the tentative distance of the neighbor...
-        if ( newDistance < neighbor.dist )
-        {
-            // Remove the neighbor from the priority queue so we can update the value
-            priorityQueue.remove( neighbor );
-            // Update the tentative distance of the neighbor
-            neighbor.dist = newDistance;
-            // Add the neighbor into the priority queue so that it can be sorted among the other vertices
-            priorityQueue.add( neighbor );
-        }
-    }
-}
-```
+![graph-theory-dijkstras-algorithm-3](..\..\..\resources\graph-theory-dijkstras-algorithm-3.png)
 
 ## Problems
 

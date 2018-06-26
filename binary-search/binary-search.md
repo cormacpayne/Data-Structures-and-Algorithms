@@ -77,24 +77,7 @@ Now that we have the three possible scenarios handled, we just need to define wh
 
 We want to keep searching while we have some range of numbers to check, so if `lo` ever becomes greater than `hi`, then our target value is not in the array due to the fact that we have run out of numbers to check.
 
-```java
-int lo = 0;
-int hi = N-1;
-
-while (lo <= hi)
-{
-  mid = lo + (hi -lo) / 2;
-  
-  if (array[mid] == targetValue)
-      break;
-  
-  if (array[mid] < targetValue)
-      lo = mid + 1;
-  
-  if (array[mid] > targetValue)
-      hi = mid - 1;
-}
-```
+![binary-search](..\resources\binary-search.png)
 
 ## Problems
 

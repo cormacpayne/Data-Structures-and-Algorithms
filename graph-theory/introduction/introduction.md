@@ -53,32 +53,11 @@ There are many ways to use an adjacency matrix to represent a matrix, but we wil
 
 #### Connection matrix
 
-```java
-boolean[][] conn = new boolean[ N ][ N ];
-```
-
-The matrix `conn` tells us if two vertices are connected
-
-```java
-if ( conn[ i ][ j ] )
-    // there is an edge from vertex i to vertex j
-
-else
-    // there is no edge from vertex i to vertex j
-```
+![graph-theory-introduction-1](..\..\resources\graph-theory-introduction-1.png)
 
 #### Cost matrix
 
-```java
-int[][] cost = new int[ N ][ N ];
-```
-
-The matrix `cost` tells us the cost (or edge weight) between two vertices
-
-```java
-cost[ i ][ j ] = 7; // this means it costs 7 units to travel from vertex i to vertex j
-cost[ i ][ j ] = 0; // this usually means there is no edge from vertiex i to vertex j
-```
+![graph-theory-introduction-2](..\..\resources\graph-theory-introduction-2.png)
 
 #### Pros and Cons
 
@@ -96,19 +75,7 @@ Rather than making space for all _N_ x _N_ possible edge connections, an _adjace
 
 We are able to do this by creating an array that contains `ArrayLists` holding the values of the vertices that a vertex is connected to.
 
-```java
-ArrayList<Integer>[] graph = new ArrayList<Integer>[ N + 1 ];
-
-// For each vertex, we need to initialize the list of vertices the vertex has a connection to
-for ( int i = 0; i <= N; i++ )
-{
-    graph[ i ] = new ArrayList<Integer>();
-}
-
-graph[ i ].add( j ); // get the list of vertices for vertex i and add a connection to vertex j
-
-ArrayList<Integer> neighbors = graph[ k ]; // get the list of vertices that vertex k is connected to
-```
+![graph-theory-introduction-3](..\..\resources\graph-theory-introduction-3.png)
 
 #### Pros and  Cons
 
